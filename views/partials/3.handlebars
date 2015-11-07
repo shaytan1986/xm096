@@ -1,1 +1,22 @@
-<h3>ITEM 3 PARTIAL</h1>
+<h3>ITEM 3 PARTIAL</h3>
+<table style="{{oAlertData.styles.table}}">
+	<tr>
+		<td style="{{oAlertData.styles.td_header}}">
+			Trigger Price
+		</td>
+		<td style="{{oAlertData.styles.td_header}}">
+			Trigger Limit
+		</td>
+		<td style="{{oAlertData.styles.td_header}}">
+			WSODIssue
+		</td>
+	</tr>
+	<tr>
+		<td style="{{oAlertData.styles.td_cell}}">{{oAlertData.TRIGGER_PRICE}}</td>
+		<td style="{{oAlertData.styles.td_cell}}">{{oAlertData.TRIGGER_LIMIT}}</td>
+		<td style="{{oAlertData.styles.td_cell}}">{{oAlertData.WSODISSUE}}</td>
+	</tr>
+</table>
+<p>
+	The price of {{oAlertData.CompanyName}} ({{oAlertData.Symbol}}) went up by %{{oAlertData.TRIGGER_VALUE}} on {{oAlertData.dtNow}} to it's current price, ${{oAlertData.TRIGGER_PRICE}}.
+</p>
