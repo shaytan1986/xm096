@@ -1,0 +1,37 @@
+<html>
+<head>
+</head>
+<body style="width:600px;padding:10px;">
+	<table style="{{mgStyles.header_table_grey}}">
+		<tr>
+			<td style="{{mgStyles.header_td}}">&nbsp;</td>
+		</tr>
+	</table>
+	<hr style="{{mgStyles.blue_hr_spacer}}"/>
+	<!-- Data Header -->
+	<table style="{{mgStyles.data_table}}">
+		<tr style="border-bottom:2px solid #434343;">
+			<td style="width:300px;{{mgStyles.data_td_colheader}}">
+				Vehicle Name
+			</td>
+			<td style="width:150px;text-align:center;{{mgStyles.data_td_colheader}}">
+				Risk Data
+			</td>
+			<td style="width:150px;text-align:center;{{mgStyles.data_td_colheader}}">
+				Perf Data
+			</td>
+		</tr>
+		{{#each mgDat}}
+			<tr>
+				{{#if isPortfolio }}
+					<td style="font-weight:bold;">{{{VehicleName}}}</td>
+				{{else}}
+					<td style="padding-left:20px;">{{{VehicleName}}}</td>
+				{{/if}}
+				<td>{{{RiskDate}}}</td>
+				<td>{{{PerfDate}}}</td>
+			</tr>
+		{{/each}}
+	</table>
+</body>
+</html>

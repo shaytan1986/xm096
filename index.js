@@ -20,13 +20,17 @@ var oAlertData = {
 	WSODISSUE:util.req("WSODISSUE", ""),
 	Symbol:util.req("Symbol", ""),
 	CompanyName:util.req("CompanyName", ""),
-	styles:styles.Styles,
+	styles:styles.XMStyles,
 	dtNow:new Date().toDateString()
 };
 
 // This is the main heavy lifter. It does all the data fetching and assignment
 app.use(function(req, res, next) {
+	// MG
+	res.locals.mgDat = mockData.MGQidData;
+	res.locals.mgStyles = styles.MGStyles;
 
+	// XM
 	switch (oAlertData.alertItemId) {
 		case "1":
 			break;
@@ -49,8 +53,13 @@ app.use(function(req, res, next) {
 
 	next();
 })
+
 app.get('/', function(req, res){
 	res.render("H");
+})
+
+app.get("/mg", function(req, res){
+	res.render("mg", { layout:null});
 })
 
 app.listen(app.get("port"), function(){
